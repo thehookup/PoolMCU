@@ -1,0 +1,35 @@
+switch:
+  - platform: mqtt
+    name: "Pool Light"
+    command_topic: "commands/pool"
+    payload_on: "Pool_Light"
+    payload_off: "Pool_Light"
+  - platform: mqtt
+    name: "Spa Light"
+    command_topic: "commands/pool"
+    payload_on: "Spa_Light"
+    payload_off: "Spa_Light"
+  - platform: mqtt
+    name: "Pool Cleaner"
+    command_topic: "commands/pool"
+    payload_on: "Cleaner"
+    payload_off: "Cleaner"
+  - platform: mqtt
+    name: "Hot Tub"
+    state_topic: "pool/mode"
+    command_topic: "commands/pool"
+    payload_on: "SPA"
+    payload_off: "POOL"
+    
+sensor:
+  - platform: mqtt
+    name: "Pool Temperature"
+    state_topic: "pool/temperature"
+    unit_of_measurement: '°F'
+  - platform: mqtt
+    name: "Pool Mode"
+    state_topic: "pool/mode"
+  - platform: mqtt
+    name: "Pool MCU"
+    state_topic: "checkIn/poolMCU"
+    expire_after: 200
